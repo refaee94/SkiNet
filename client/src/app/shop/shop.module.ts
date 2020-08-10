@@ -10,8 +10,8 @@ import { ShopRoutingModule } from './shop-routing.module';
   declarations: [ShopComponent, ProductItemComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
-    SharedModule,ShopRoutingModule
+    SharedModule,
+    ShopRoutingModule
   ]
-
 })
 export class ShopModule { }

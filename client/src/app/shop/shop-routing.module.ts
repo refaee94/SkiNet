@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Route } from '@angular/compiler/src/core';
+import { Routes, RouterModule } from '@angular/router';
 import { ShopComponent } from './shop.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { Routes, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  {path: '', component: ShopComponent},
+  {path: ':id', component: ProductDetailsComponent, data: {breadcrumb: {alias: 'productDetails'}}},
+];
 
-const routes:Routes=[
-
-
-  {path:'',component:ShopComponent},
-{path:':id',component:ProductDetailsComponent},
-]
 @NgModule({
   declarations: [],
   imports: [
-RouterModule.forChild(routes)  ]
-,exports:[RouterModule]
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule]
 })
 export class ShopRoutingModule { }
