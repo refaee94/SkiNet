@@ -12,6 +12,8 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {services.AddScoped<ITokenService,TokenService>();
+                services.AddScoped<IPaymentService,PaymentService>();
+
             services.AddScoped<IProductRepository, ProductRepository>();
                         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
